@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <form action="/update" method="POST" enctype="multipart/form-data">
+            Name: <input name="name" value=<%= booking.name %>><br>
+            Borough: <input name="borough" value=<%= booking.borough %>><br>
+            Cuisine: <input name="cuisine" value=<%= booking.cuisine %>><br>
+            <br><p>Address</p>
+            Street: <input name="street" value=<%= booking.street %> ><br>
+            Building: <input name="building" value=<%= booking.building %> ><br>
+            Zipcode: <input name="zipcode" value=<%= booking.zipcode %> ><br>
+            GPS Coordinates(lon.): <input name="lon" value=<%= booking.lon %> ><br>
+            GPS Coordinates(lat.): <input name="lat" value=<%= booking.lat %> ><br>
+            Score (1-10): <input name="rate" value=<%= booking.score %> ><br><br>
+            <input type="file" name="filetoupload"><br>
+            <input type="hidden" name="_id" value=<%= booking._id %>><br>
+            <input type="submit" value="update">  
+        </form>
+        <a href="/">home</a>
+    </body>
+</html>

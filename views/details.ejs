@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <H2>Restaurant Details</H2><hr>
+        <H2>Restaurant Name: <b><%= booking.name %></b></H2>
+
+        <% if (booking.photo) { %>
+            <img src="data:image/jpg;base64, <%= booking.photo %>"><br>
+        <% } %><hr>
+        <p>Restaurant ID: <%= booking.restaurant_id %></p>
+        <p>Borough: <%= booking.borough %></p>
+        <p>Cuisine: <%= booking.cuisine %></p>
+        <br><p>Address</p>
+        <p>Street: <%= booking.street %></p>
+        <p>Building: <%= booking.building %></p>
+        <p>Zipcode: <%= booking.zipcode %></p>
+        <br><p>GPS</p>
+        <p>GPS Coordinates (lon.): <%= booking.lon %></p>
+        <p>GPS Coordinates (lat.): <%= booking.lat %></p><br>
+        <p>Rating: <%= booking.score %></p><hr>
+
+        <a href="/edit?_id=<%= booking._id %>">Edit</a><br>
+        <a href="/map?_id=<%= booking._id %>">Map</a><br>
+        <p></p>
+        <a href="/">home</a>
+    </body>
+</html>
