@@ -1,0 +1,22 @@
+{
+    "name": "server",
+    "description": "Restaurant",
+    "author": "Zheng Zequan 12307824",
+    "version": "0.0.1",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cookie-session": "^1.4.0",
+        "ejs": "*",
+        "express": "^4.17.1",
+        "express-formidable": "*",
+        "express-session": "^1.17.1",
+        "mongodb": "3.6.3",
+        "nodemon": "^2.0.6",
+        "passport": "^0.4.1",
+        "passport-facebook": "^3.0.0"
+    },
+    "engine": "node >= 12.0.0",
+    "scripts": {
+        "start": "node server"
+    }
+}
