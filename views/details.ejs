@@ -1,0 +1,42 @@
+<html>
+
+<body>
+    <H2>Restaurant Details</H2><hr>
+    <H2>Restaurant Name: <b><%= restaurant.name %></b></H2>
+
+    <% if (restaurant.photo) { %>
+        <img src="data:image/jpg;base64, <%= restaurant.photo %>"><br>
+    <% } %><hr>
+
+    <p>Restaurant ID: <%= restaurant.restaurant_id %></p>
+    <p>Borough: <%= restaurant.borough %></p>
+    <p>Cuisine: <%= restaurant.cuisine %></p>
+    <p>Address:</p>
+    <dd>
+        <p>Street: <%= restaurant.street %></p>
+        <p>Buliding: <%= restaurant.building %></p>
+        <p>Zipcode: <%= restaurant.zipcode %></p>
+        <p>GPS: [<%= restaurant.coord1 %>,<%= restaurant.coord2 %>]</p>
+    </dd>
+    <p>Rating:</p>
+    <dd>
+        <li>user: <%= restaurant.user %></li>
+        <li>score: <%= restaurant.score[0] %></li>
+        <% if (restaurant.score[1]) { %>
+            <li><%= restaurant.score[1] %></li> <br>
+        <% } %>
+    </dd>
+    <p>Owner: <%= restaurant.owner %>
+    </p>
+
+    <% if (restaurant.coord1) { %>
+        <a href="/leaflet?coord1=<%= restaurant.coord1 %>&coord2=<%= restaurant.coord2 %>">Map</a><br><br>
+    <% } %>
+
+    <button onclick="location.href = '/rate?_id=<%= restaurant._id %>';" class="btn btn-warning">Rate</button>
+    <button onclick="location.href = '/edit?_id=<%= restaurant._id %>';" class="btn btn-info">Edit</button>
+    <button onclick="location.href = '/delete?_id=<%= restaurant._id %>';" class="btn btn-danger">Delete</button>
+    <button onclick="location.href = '/';" class="btn btn-danger">Go Back</button>
+</body>
+
+</html>
